@@ -1,0 +1,35 @@
+<!-- Problem 5 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 5: State Selector</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const states = ["California", "Texas", "Florida", "New York", "Illinois", "Pennsylvania", "Ohio", "Georgia", "North Carolina", "Michigan"];
+            states.forEach(state => {
+                $("#stateSelect").append(`<option value="${state}">${state}</option>`);
+            });
+
+            $("#addStateButton").click(function() {
+                let selectedState = $("#stateSelect").val();
+                $("#selectedStates").append(`<div>${selectedState}</div>`);
+            });
+
+            $("#clearStatesButton").click(function() {
+                $("#selectedStates").empty();
+            });
+        });
+    </script>
+</head>
+<body>
+    <select id="stateSelect" size="10"></select>
+    <button id="addStateButton" type="button">Add State</button>
+    <br><br>
+    <div id="selectedStates" style="border: 1px solid black; padding: 10px; width: 200px; min-height: 50px;"></div>
+    <button id="clearStatesButton" type="button">Clear States</button>
+</body>
+</html>
+   
